@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Entry Login View Controller-->
         <scene sceneID="NFq-CS-0Nh">
             <objects>
-                <viewController id="cWW-Ec-RUG" sceneMemberID="viewController">
+                <viewController id="cWW-Ec-RUG" customClass="EntryLoginViewController" customModule="merp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fcY-lO-0OZ"/>
                         <viewControllerLayoutGuide type="bottom" id="7Re-eO-B1A"/>
@@ -41,6 +41,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="登录"/>
+                                <connections>
+                                    <action selector="btnLoginClick:" destination="cWW-Ec-RUG" eventType="touchUpInside" id="UHC-ci-I1Z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7y9-Rz-VHS">
                                 <rect key="frame" x="349" y="275" width="46" height="30"/>
@@ -49,9 +52,19 @@
                                 <state key="normal" title="重置">
                                     <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnResetClick:" destination="cWW-Ec-RUG" eventType="touchUpInside" id="B3k-lc-4H4"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Q-aj-oCY">
+                                <rect key="frame" x="175" y="235" width="250" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balintimes ERP APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4O-ow-9ep">
-                                <rect key="frame" x="195" y="74" width="210" height="21"/>
+                                <rect key="frame" x="195" y="84" width="210" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rGV-Np-jk0"/>
@@ -59,13 +72,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Q-aj-oCY">
-                                <rect key="frame" x="175" y="235" width="250" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -76,7 +82,7 @@
                             <constraint firstItem="xBa-t8-gpg" firstAttribute="top" secondItem="XYh-Za-4Ff" secondAttribute="bottom" constant="50" id="9vW-Cz-I0b"/>
                             <constraint firstItem="7y9-Rz-VHS" firstAttribute="centerY" secondItem="xBa-t8-gpg" secondAttribute="centerY" id="D7c-Mx-fHA"/>
                             <constraint firstItem="XYh-Za-4Ff" firstAttribute="centerX" secondItem="egU-C0-aO9" secondAttribute="centerX" id="J3l-6t-ccL"/>
-                            <constraint firstItem="egU-C0-aO9" firstAttribute="top" secondItem="h4O-ow-9ep" secondAttribute="bottom" constant="40" id="JP4-fZ-9rL"/>
+                            <constraint firstItem="egU-C0-aO9" firstAttribute="top" secondItem="h4O-ow-9ep" secondAttribute="bottom" constant="30" id="JP4-fZ-9rL"/>
                             <constraint firstItem="7y9-Rz-VHS" firstAttribute="trailing" secondItem="egU-C0-aO9" secondAttribute="trailing" constant="-30" id="P7A-f4-O9E"/>
                             <constraint firstItem="i5Q-aj-oCY" firstAttribute="centerX" secondItem="bAu-8N-6L5" secondAttribute="centerX" id="PY7-Pk-sBu"/>
                             <constraint firstItem="egU-C0-aO9" firstAttribute="centerY" secondItem="bAu-8N-6L5" secondAttribute="centerY" constant="-150" id="Pyv-uZ-glh"/>
@@ -94,6 +100,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="txtPassword" destination="XYh-Za-4Ff" id="sL2-vi-aTm"/>
+                        <outlet property="txtUserName" destination="egU-C0-aO9" id="V4J-J8-Ap0"/>
                         <segue destination="mdv-7J-Xtj" kind="show" identifier="entryErpList" id="chA-ia-SoM"/>
                     </connections>
                 </viewController>

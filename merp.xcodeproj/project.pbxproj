@@ -16,6 +16,9 @@
 		23FEA0091BFC1FD20031EC23 /* merpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA0081BFC1FD20031EC23 /* merpTests.swift */; };
 		23FEA01C1BFC21C90031EC23 /* nsObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA01B1BFC21C90031EC23 /* nsObj.m */; settings = {ASSET_TAGS = (); }; };
 		23FEA01E1BFC25C10031EC23 /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FEA01D1BFC25C10031EC23 /* Entry.storyboard */; settings = {ASSET_TAGS = (); }; };
+		23FEA0211BFC2B880031EC23 /* RequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA0201BFC2B880031EC23 /* RequestApi.swift */; settings = {ASSET_TAGS = (); }; };
+		23FEA0261BFC57B00031EC23 /* EntryLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA0251BFC57B00031EC23 /* EntryLoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		23FEA02C1BFC5CA00031EC23 /* DlgMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA02B1BFC5CA00031EC23 /* DlgMsg.swift */; settings = {ASSET_TAGS = (); }; };
 		615C8866880C0C40B9BD754C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B31D2192D1A8A41B4F18347 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		23FEA01A1BFC21C90031EC23 /* nsObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nsObj.h; sourceTree = "<group>"; };
 		23FEA01B1BFC21C90031EC23 /* nsObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nsObj.m; sourceTree = "<group>"; };
 		23FEA01D1BFC25C10031EC23 /* Entry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
+		23FEA0201BFC2B880031EC23 /* RequestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestApi.swift; sourceTree = "<group>"; };
+		23FEA0251BFC57B00031EC23 /* EntryLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryLoginViewController.swift; sourceTree = "<group>"; };
+		23FEA02B1BFC5CA00031EC23 /* DlgMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DlgMsg.swift; sourceTree = "<group>"; };
 		298BCEC63EB6797231D89EEB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6B31D2192D1A8A41B4F18347 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09F576DD47A028E2A1D8887 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,14 +98,15 @@
 		23FE9FEF1BFC1FD20031EC23 /* merp */ = {
 			isa = PBXGroup;
 			children = (
-				23FEA0181BFC200E0031EC23 /* db */,
-				23FEA0171BFC20040031EC23 /* support file */,
-				23FEA0161BFC1FF90031EC23 /* service */,
-				23FEA0151BFC1FF30031EC23 /* model */,
-				23FEA0141BFC1FEB0031EC23 /* controller */,
-				23FEA0131BFC1FE50031EC23 /* view */,
+				23FEA02A1BFC5C980031EC23 /* util */,
 				23FE9FF01BFC1FD20031EC23 /* AppDelegate.swift */,
+				23FEA0141BFC1FEB0031EC23 /* controller */,
+				23FEA0181BFC200E0031EC23 /* db */,
 				23FEA0191BFC21C90031EC23 /* merp-Bridging-Header.h */,
+				23FEA0151BFC1FF30031EC23 /* model */,
+				23FEA0161BFC1FF90031EC23 /* service */,
+				23FEA0171BFC20040031EC23 /* support file */,
+				23FEA0131BFC1FE50031EC23 /* view */,
 			);
 			path = merp;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				23FE9FF21BFC1FD20031EC23 /* ViewController.swift */,
+				23FEA0251BFC57B00031EC23 /* EntryLoginViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 		23FEA0161BFC1FF90031EC23 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				23FEA0201BFC2B880031EC23 /* RequestApi.swift */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -162,6 +171,14 @@
 				23FE9FF71BFC1FD20031EC23 /* merp.xcdatamodeld */,
 			);
 			name = db;
+			sourceTree = "<group>";
+		};
+		23FEA02A1BFC5C980031EC23 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				23FEA02B1BFC5CA00031EC23 /* DlgMsg.swift */,
+			);
+			name = util;
 			sourceTree = "<group>";
 		};
 		49793EE3B6DBF89118405E7F /* Pods */ = {
@@ -335,7 +352,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				23FE9FF31BFC1FD20031EC23 /* ViewController.swift in Sources */,
+				23FEA02C1BFC5CA00031EC23 /* DlgMsg.swift in Sources */,
+				23FEA0261BFC57B00031EC23 /* EntryLoginViewController.swift in Sources */,
 				23FE9FF11BFC1FD20031EC23 /* AppDelegate.swift in Sources */,
+				23FEA0211BFC2B880031EC23 /* RequestApi.swift in Sources */,
 				23FEA01C1BFC21C90031EC23 /* nsObj.m in Sources */,
 				23FE9FF91BFC1FD20031EC23 /* merp.xcdatamodeld in Sources */,
 			);
