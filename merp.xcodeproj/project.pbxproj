@@ -15,6 +15,7 @@
 		23FE9FFE1BFC1FD20031EC23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FE9FFC1BFC1FD20031EC23 /* LaunchScreen.storyboard */; };
 		23FEA0091BFC1FD20031EC23 /* merpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA0081BFC1FD20031EC23 /* merpTests.swift */; };
 		23FEA01C1BFC21C90031EC23 /* nsObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA01B1BFC21C90031EC23 /* nsObj.m */; settings = {ASSET_TAGS = (); }; };
+		23FEA01E1BFC25C10031EC23 /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FEA01D1BFC25C10031EC23 /* Entry.storyboard */; settings = {ASSET_TAGS = (); }; };
 		615C8866880C0C40B9BD754C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B31D2192D1A8A41B4F18347 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		23FEA0191BFC21C90031EC23 /* merp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "merp-Bridging-Header.h"; sourceTree = "<group>"; };
 		23FEA01A1BFC21C90031EC23 /* nsObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nsObj.h; sourceTree = "<group>"; };
 		23FEA01B1BFC21C90031EC23 /* nsObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nsObj.m; sourceTree = "<group>"; };
+		23FEA01D1BFC25C10031EC23 /* Entry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
 		298BCEC63EB6797231D89EEB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6B31D2192D1A8A41B4F18347 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09F576DD47A028E2A1D8887 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				23FE9FF41BFC1FD20031EC23 /* Main.storyboard */,
 				23FE9FFC1BFC1FD20031EC23 /* LaunchScreen.storyboard */,
+				23FEA01D1BFC25C10031EC23 /* Entry.storyboard */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23FE9FFE1BFC1FD20031EC23 /* LaunchScreen.storyboard in Resources */,
+				23FEA01E1BFC25C10031EC23 /* Entry.storyboard in Resources */,
 				23FE9FFB1BFC1FD20031EC23 /* Assets.xcassets in Resources */,
 				23FE9FF61BFC1FD20031EC23 /* Main.storyboard in Resources */,
 			);
