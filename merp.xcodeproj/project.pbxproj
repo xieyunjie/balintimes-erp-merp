@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231D882B1BFDA384003B4347 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D882A1BFDA384003B4347 /* UserModel.swift */; settings = {ASSET_TAGS = (); }; };
+		231D882D1BFDB309003B4347 /* usermodels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 231D882C1BFDB309003B4347 /* usermodels.plist */; settings = {ASSET_TAGS = (); }; };
+		231D88311BFDC6AF003B4347 /* UserModelGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D88301BFDC6AF003B4347 /* UserModelGroup.swift */; settings = {ASSET_TAGS = (); }; };
+		231D88331BFDC8F0003B4347 /* ErpListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D88321BFDC8F0003B4347 /* ErpListViewHeader.swift */; settings = {ASSET_TAGS = (); }; };
 		23FE9FF11BFC1FD20031EC23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE9FF01BFC1FD20031EC23 /* AppDelegate.swift */; };
 		23FE9FF31BFC1FD20031EC23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE9FF21BFC1FD20031EC23 /* ViewController.swift */; };
 		23FE9FF61BFC1FD20031EC23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FE9FF41BFC1FD20031EC23 /* Main.storyboard */; };
@@ -19,6 +23,14 @@
 		23FEA0211BFC2B880031EC23 /* RequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA0201BFC2B880031EC23 /* RequestApi.swift */; settings = {ASSET_TAGS = (); }; };
 		23FEA0261BFC57B00031EC23 /* EntryLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA0251BFC57B00031EC23 /* EntryLoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23FEA02C1BFC5CA00031EC23 /* DlgMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA02B1BFC5CA00031EC23 /* DlgMsg.swift */; settings = {ASSET_TAGS = (); }; };
+		23FEA0301BFC64420031EC23 /* EntryErpListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA02F1BFC64420031EC23 /* EntryErpListViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		23FEA0321BFC65610031EC23 /* CRM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FEA0311BFC65610031EC23 /* CRM.storyboard */; settings = {ASSET_TAGS = (); }; };
+		23FEA0341BFC656D0031EC23 /* BMMS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FEA0331BFC656D0031EC23 /* BMMS.storyboard */; settings = {ASSET_TAGS = (); }; };
+		23FEA0361BFC65820031EC23 /* Quote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FEA0351BFC65820031EC23 /* Quote.storyboard */; settings = {ASSET_TAGS = (); }; };
+		23FEA0381BFC6D880031EC23 /* EntryCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA0371BFC6D880031EC23 /* EntryCommonViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		23FEA03A1BFC6DA40031EC23 /* EntryUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA0391BFC6DA40031EC23 /* EntryUserViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		23FEA0421BFC73A90031EC23 /* commoncells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23FEA0411BFC73A90031EC23 /* commoncells.plist */; settings = {ASSET_TAGS = (); }; };
+		23FEA0451BFC760A0031EC23 /* CommonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FEA0431BFC760A0031EC23 /* CommonViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		615C8866880C0C40B9BD754C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B31D2192D1A8A41B4F18347 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		231D882A1BFDA384003B4347 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		231D882C1BFDB309003B4347 /* usermodels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = usermodels.plist; sourceTree = "<group>"; };
+		231D88301BFDC6AF003B4347 /* UserModelGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelGroup.swift; sourceTree = "<group>"; };
+		231D88321BFDC8F0003B4347 /* ErpListViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErpListViewHeader.swift; sourceTree = "<group>"; };
 		23FE9FED1BFC1FD20031EC23 /* merp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = merp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23FE9FF01BFC1FD20031EC23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23FE9FF21BFC1FD20031EC23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +67,14 @@
 		23FEA0201BFC2B880031EC23 /* RequestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestApi.swift; sourceTree = "<group>"; };
 		23FEA0251BFC57B00031EC23 /* EntryLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryLoginViewController.swift; sourceTree = "<group>"; };
 		23FEA02B1BFC5CA00031EC23 /* DlgMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DlgMsg.swift; sourceTree = "<group>"; };
+		23FEA02F1BFC64420031EC23 /* EntryErpListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryErpListViewController.swift; sourceTree = "<group>"; };
+		23FEA0311BFC65610031EC23 /* CRM.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CRM.storyboard; sourceTree = "<group>"; };
+		23FEA0331BFC656D0031EC23 /* BMMS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BMMS.storyboard; sourceTree = "<group>"; };
+		23FEA0351BFC65820031EC23 /* Quote.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Quote.storyboard; sourceTree = "<group>"; };
+		23FEA0371BFC6D880031EC23 /* EntryCommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCommonViewController.swift; sourceTree = "<group>"; };
+		23FEA0391BFC6DA40031EC23 /* EntryUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryUserViewController.swift; sourceTree = "<group>"; };
+		23FEA0411BFC73A90031EC23 /* commoncells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = commoncells.plist; sourceTree = "<group>"; };
+		23FEA0431BFC760A0031EC23 /* CommonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewCell.swift; sourceTree = "<group>"; };
 		298BCEC63EB6797231D89EEB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6B31D2192D1A8A41B4F18347 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09F576DD47A028E2A1D8887 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +122,7 @@
 		23FE9FEF1BFC1FD20031EC23 /* merp */ = {
 			isa = PBXGroup;
 			children = (
+				23FEA03C1BFC728B0031EC23 /* xib */,
 				23FEA02A1BFC5C980031EC23 /* util */,
 				23FE9FF01BFC1FD20031EC23 /* AppDelegate.swift */,
 				23FEA0141BFC1FEB0031EC23 /* controller */,
@@ -126,6 +151,9 @@
 				23FE9FF41BFC1FD20031EC23 /* Main.storyboard */,
 				23FE9FFC1BFC1FD20031EC23 /* LaunchScreen.storyboard */,
 				23FEA01D1BFC25C10031EC23 /* Entry.storyboard */,
+				23FEA0311BFC65610031EC23 /* CRM.storyboard */,
+				23FEA0331BFC656D0031EC23 /* BMMS.storyboard */,
+				23FEA0351BFC65820031EC23 /* Quote.storyboard */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -134,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				23FE9FF21BFC1FD20031EC23 /* ViewController.swift */,
-				23FEA0251BFC57B00031EC23 /* EntryLoginViewController.swift */,
+				23FEA03B1BFC6DAD0031EC23 /* Entry */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -144,6 +172,8 @@
 			children = (
 				23FEA01A1BFC21C90031EC23 /* nsObj.h */,
 				23FEA01B1BFC21C90031EC23 /* nsObj.m */,
+				231D882A1BFDA384003B4347 /* UserModel.swift */,
+				231D88301BFDC6AF003B4347 /* UserModelGroup.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -161,6 +191,8 @@
 			children = (
 				23FE9FFA1BFC1FD20031EC23 /* Assets.xcassets */,
 				23FE9FFF1BFC1FD20031EC23 /* Info.plist */,
+				23FEA0411BFC73A90031EC23 /* commoncells.plist */,
+				231D882C1BFDB309003B4347 /* usermodels.plist */,
 			);
 			name = "support file";
 			sourceTree = "<group>";
@@ -179,6 +211,26 @@
 				23FEA02B1BFC5CA00031EC23 /* DlgMsg.swift */,
 			);
 			name = util;
+			sourceTree = "<group>";
+		};
+		23FEA03B1BFC6DAD0031EC23 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				23FEA0251BFC57B00031EC23 /* EntryLoginViewController.swift */,
+				23FEA02F1BFC64420031EC23 /* EntryErpListViewController.swift */,
+				23FEA0371BFC6D880031EC23 /* EntryCommonViewController.swift */,
+				23FEA0391BFC6DA40031EC23 /* EntryUserViewController.swift */,
+			);
+			name = Entry;
+			sourceTree = "<group>";
+		};
+		23FEA03C1BFC728B0031EC23 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				23FEA0431BFC760A0031EC23 /* CommonViewCell.swift */,
+				231D88321BFDC8F0003B4347 /* ErpListViewHeader.swift */,
+			);
+			name = xib;
 			sourceTree = "<group>";
 		};
 		49793EE3B6DBF89118405E7F /* Pods */ = {
@@ -282,9 +334,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231D882D1BFDB309003B4347 /* usermodels.plist in Resources */,
+				23FEA0361BFC65820031EC23 /* Quote.storyboard in Resources */,
 				23FE9FFE1BFC1FD20031EC23 /* LaunchScreen.storyboard in Resources */,
+				23FEA0421BFC73A90031EC23 /* commoncells.plist in Resources */,
 				23FEA01E1BFC25C10031EC23 /* Entry.storyboard in Resources */,
 				23FE9FFB1BFC1FD20031EC23 /* Assets.xcassets in Resources */,
+				23FEA0341BFC656D0031EC23 /* BMMS.storyboard in Resources */,
+				23FEA0321BFC65610031EC23 /* CRM.storyboard in Resources */,
 				23FE9FF61BFC1FD20031EC23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,11 +409,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				23FE9FF31BFC1FD20031EC23 /* ViewController.swift in Sources */,
+				231D882B1BFDA384003B4347 /* UserModel.swift in Sources */,
 				23FEA02C1BFC5CA00031EC23 /* DlgMsg.swift in Sources */,
+				23FEA03A1BFC6DA40031EC23 /* EntryUserViewController.swift in Sources */,
+				231D88311BFDC6AF003B4347 /* UserModelGroup.swift in Sources */,
+				231D88331BFDC8F0003B4347 /* ErpListViewHeader.swift in Sources */,
 				23FEA0261BFC57B00031EC23 /* EntryLoginViewController.swift in Sources */,
+				23FEA0381BFC6D880031EC23 /* EntryCommonViewController.swift in Sources */,
 				23FE9FF11BFC1FD20031EC23 /* AppDelegate.swift in Sources */,
 				23FEA0211BFC2B880031EC23 /* RequestApi.swift in Sources */,
 				23FEA01C1BFC21C90031EC23 /* nsObj.m in Sources */,
+				23FEA0451BFC760A0031EC23 /* CommonViewCell.swift in Sources */,
+				23FEA0301BFC64420031EC23 /* EntryErpListViewController.swift in Sources */,
 				23FE9FF91BFC1FD20031EC23 /* merp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
