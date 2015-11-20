@@ -98,6 +98,16 @@
 				<key>controller</key>
 				<string>QuotePriceViewController</string>
 			</dict>
+			<dict>
+				<key>label</key>
+				<string>历史查询</string>
+				<key>icon</key>
+				<string>gift</string>
+				<key>board</key>
+				<string>Quote</string>
+				<key>controller</key>
+				<string>QuotePriceViewController</string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -130,6 +140,65 @@
 			<dict>
 				<key>label</key>
 				<string>单据管理</string>
+				<key>icon</key>
+				<string>gift</string>
+				<key>board</key>
+				<string>BMMS</string>
+				<key>controller</key>
+				<string>BMMSMediaForSaleViewController</string>
+			</dict>
+			<dict>
+				<key>label</key>
+				<string>登挂查询</string>
+				<key>icon</key>
+				<string>gift</string>
+				<key>board</key>
+				<string>BMMS</string>
+				<key>controller</key>
+				<string>BMMSMediaForSaleViewController</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>合同管理</string>
+		<key>icon</key>
+		<string>gift</string>
+		<key>models</key>
+		<array>
+			<dict>
+				<key>label</key>
+				<string>媒体查位</string>
+				<key>icon</key>
+				<string>gift</string>
+				<key>board</key>
+				<string>BMMS</string>
+				<key>controller</key>
+				<string>BMMSMediaForSaleViewController</string>
+			</dict>
+			<dict>
+				<key>label</key>
+				<string>吉位查询</string>
+				<key>icon</key>
+				<string>gift</string>
+				<key>board</key>
+				<string>BMMS</string>
+				<key>controller</key>
+				<string>BMMSMediaForSaleViewController</string>
+			</dict>
+			<dict>
+				<key>label</key>
+				<string>单据管理</string>
+				<key>icon</key>
+				<string>gift</string>
+				<key>board</key>
+				<string>BMMS</string>
+				<key>controller</key>
+				<string>BMMSMediaForSaleViewController</string>
+			</dict>
+			<dict>
+				<key>label</key>
+				<string>登挂查询</string>
 				<key>icon</key>
 				<string>gift</string>
 				<key>board</key>
