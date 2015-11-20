@@ -133,8 +133,8 @@
                                     <navigationItem title="常用功能" id="PWt-d6-UvV"/>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SS1-r3-EDs">
-                                <rect key="frame" x="0.0" y="50" width="600" height="499"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SS1-r3-EDs">
+                                <rect key="frame" x="0.0" y="51" width="600" height="499"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b3v-y1-hvn">
@@ -227,10 +227,10 @@
                                     <size key="itemSize" width="70" height="80"/>
                                     <size key="headerReferenceSize" width="50" height="40"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="445-Zs-IUO" customClass="CommonViewCell" customModule="merp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="erpcell" id="445-Zs-IUO" customClass="ErpListViewCell" customModule="merp" customModuleProvider="target">
                                         <rect key="frame" x="5" y="45" width="70" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -253,6 +253,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="imgIcon" destination="ck0-7y-xMC" id="blh-RS-1O3"/>
+                                            <outlet property="lblIntro" destination="1wj-tE-BeO" id="JD5-XE-RIv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="UGN-Oz-h46" customClass="ErpListViewHeader" customModule="merp" customModuleProvider="target">
@@ -262,20 +266,20 @@
                                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ahL-k3-gaC">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                             <animations/>
-                                            <inset key="titleEdgeInsets" minX="0.0" minY="5" maxX="5" maxY="5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" image="buddy_header_arrow" backgroundImage="buddy_header_bg"/>
+                                            <state key="normal" title="aaaaaaaaa" image="buddy_header_arrow" backgroundImage="buddy_header_bg">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
                                             <state key="highlighted" backgroundImage="buddy_header_bg_highlighted"/>
                                             <connections>
                                                 <action selector="btnGroupClick:" destination="UGN-Oz-h46" eventType="touchUpInside" id="veH-KO-Tx5"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmq-1k-mBw">
-                                            <rect key="frame" x="472" y="11" width="100" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmq-1k-mBw">
+                                            <rect key="frame" x="502" y="10" width="40" height="20"/>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="ofA-XW-fzo"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -286,8 +290,8 @@
                                         <constraint firstAttribute="bottom" secondItem="ahL-k3-gaC" secondAttribute="bottom" id="CHh-xr-HFp"/>
                                         <constraint firstAttribute="trailing" secondItem="ahL-k3-gaC" secondAttribute="trailing" id="Eg5-CZ-TeU"/>
                                         <constraint firstItem="ahL-k3-gaC" firstAttribute="leading" secondItem="UGN-Oz-h46" secondAttribute="leading" id="IcT-bu-xFv"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="zmq-1k-mBw" secondAttribute="trailing" constant="20" id="arG-iJ-biI"/>
-                                        <constraint firstItem="zmq-1k-mBw" firstAttribute="centerY" secondItem="UGN-Oz-h46" secondAttribute="centerY" id="usA-Cm-CRr"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zmq-1k-mBw" secondAttribute="trailing" constant="50" id="KAn-bm-vKv"/>
+                                        <constraint firstItem="zmq-1k-mBw" firstAttribute="centerY" secondItem="UGN-Oz-h46" secondAttribute="centerY" id="TMe-Ac-dTs"/>
                                         <constraint firstItem="ahL-k3-gaC" firstAttribute="top" secondItem="UGN-Oz-h46" secondAttribute="top" id="vDf-Kc-4zh"/>
                                     </constraints>
                                     <connections>
@@ -310,6 +314,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="功能列表" id="4PY-Ue-dLG"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ZCd-I7-ShT" id="UvZ-C1-fWR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlq-iP-sxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

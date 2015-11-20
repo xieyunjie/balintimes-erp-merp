@@ -11,6 +11,7 @@
 		231D882D1BFDB309003B4347 /* usermodels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 231D882C1BFDB309003B4347 /* usermodels.plist */; settings = {ASSET_TAGS = (); }; };
 		231D88311BFDC6AF003B4347 /* UserModelGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D88301BFDC6AF003B4347 /* UserModelGroup.swift */; settings = {ASSET_TAGS = (); }; };
 		231D88331BFDC8F0003B4347 /* ErpListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D88321BFDC8F0003B4347 /* ErpListViewHeader.swift */; settings = {ASSET_TAGS = (); }; };
+		23B8B8D61BFEB82D00811AEA /* ErpListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B8B8D51BFEB82D00811AEA /* ErpListViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		23FE9FF11BFC1FD20031EC23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE9FF01BFC1FD20031EC23 /* AppDelegate.swift */; };
 		23FE9FF31BFC1FD20031EC23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE9FF21BFC1FD20031EC23 /* ViewController.swift */; };
 		23FE9FF61BFC1FD20031EC23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FE9FF41BFC1FD20031EC23 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		231D882C1BFDB309003B4347 /* usermodels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = usermodels.plist; sourceTree = "<group>"; };
 		231D88301BFDC6AF003B4347 /* UserModelGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelGroup.swift; sourceTree = "<group>"; };
 		231D88321BFDC8F0003B4347 /* ErpListViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErpListViewHeader.swift; sourceTree = "<group>"; };
+		23B8B8D51BFEB82D00811AEA /* ErpListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErpListViewCell.swift; sourceTree = "<group>"; };
 		23FE9FED1BFC1FD20031EC23 /* merp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = merp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23FE9FF01BFC1FD20031EC23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23FE9FF21BFC1FD20031EC23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				23FEA0431BFC760A0031EC23 /* CommonViewCell.swift */,
 				231D88321BFDC8F0003B4347 /* ErpListViewHeader.swift */,
+				23B8B8D51BFEB82D00811AEA /* ErpListViewCell.swift */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				23FE9FF31BFC1FD20031EC23 /* ViewController.swift in Sources */,
 				231D882B1BFDA384003B4347 /* UserModel.swift in Sources */,
 				23FEA02C1BFC5CA00031EC23 /* DlgMsg.swift in Sources */,
+				23B8B8D61BFEB82D00811AEA /* ErpListViewCell.swift in Sources */,
 				23FEA03A1BFC6DA40031EC23 /* EntryUserViewController.swift in Sources */,
 				231D88311BFDC6AF003B4347 /* UserModelGroup.swift in Sources */,
 				231D88331BFDC8F0003B4347 /* ErpListViewHeader.swift in Sources */,

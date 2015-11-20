@@ -28,7 +28,8 @@ class ErpListViewHeader: UICollectionReusableView {
             self._userGroup = value!;
             
             self.btnGroup.setTitle(self._userGroup?.name, forState: UIControlState.Normal);
-            self.lblCount.text = "\(self.userGroup?.models?.count) 项";
+            let count = (self.userGroup?.models?.count)!;
+            self.lblCount.text = "\(count) 项";
             
             btnGroup.imageView?.contentMode = UIViewContentMode.Center;
             btnGroup.imageView?.clipsToBounds = false;

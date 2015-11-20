@@ -13,7 +13,7 @@ class UserModelGroup:NSObject{
     var name:String?;
     var icon:String?;
     
-    let visible:Bool = false;
+    var visible:Bool = false;
     
     var models:[UserModel]?;
     
