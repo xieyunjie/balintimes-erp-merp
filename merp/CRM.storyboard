@@ -37,19 +37,32 @@
                                     <action selector="btnDatePickerClick:" destination="cjJ-7H-f1H" eventType="touchUpInside" id="znH-gj-qDd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0Py-EJ-OtD">
+                                <rect key="frame" x="20" y="96" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtDateClick:" destination="cjJ-7H-f1H" eventType="touchDown" id="jSM-dL-UuB"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="F5J-hV-SNi" secondAttribute="trailing" id="BYl-Bc-rIX"/>
+                            <constraint firstItem="0Py-EJ-OtD" firstAttribute="top" secondItem="Efl-Tg-OqE" secondAttribute="bottom" constant="8" symbolic="YES" id="Esg-eX-n6O"/>
                             <constraint firstItem="F5J-hV-SNi" firstAttribute="leading" secondItem="IoP-p1-zwK" secondAttribute="leadingMargin" id="Mmb-j1-S3g"/>
                             <constraint firstItem="Efl-Tg-OqE" firstAttribute="leading" secondItem="F5J-hV-SNi" secondAttribute="leading" id="TbU-Aj-f8Z"/>
+                            <constraint firstItem="0Py-EJ-OtD" firstAttribute="trailing" secondItem="F5J-hV-SNi" secondAttribute="trailing" id="TeM-7F-ZJf"/>
                             <constraint firstItem="F5J-hV-SNi" firstAttribute="top" secondItem="b46-80-0x1" secondAttribute="bottom" id="anJ-ig-wVi"/>
+                            <constraint firstItem="0Py-EJ-OtD" firstAttribute="leading" secondItem="Efl-Tg-OqE" secondAttribute="leading" id="fCH-7a-7fC"/>
                             <constraint firstItem="Efl-Tg-OqE" firstAttribute="top" secondItem="F5J-hV-SNi" secondAttribute="bottom" constant="8" symbolic="YES" id="lvT-rv-oNz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="txtCity" destination="F5J-hV-SNi" id="wPg-Wu-wuF"/>
+                        <outlet property="txtDate" destination="0Py-EJ-OtD" id="6bc-Ep-EYr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sa2-cJ-ezq" userLabel="First Responder" sceneMemberID="firstResponder"/>

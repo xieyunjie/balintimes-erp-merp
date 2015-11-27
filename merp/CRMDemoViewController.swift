@@ -12,10 +12,12 @@ class CRMDemoViewController: UIViewController {
 
     @IBOutlet weak var txtCity: UITextField!
     
+    @IBOutlet weak var txtDate: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         txtCity.inputView = UIView(frame: CGRectZero);
+        txtDate.inputView = UIView(frame: CGRectZero);
 
         // Do any additional setup after loading the view.
     }
@@ -40,10 +42,24 @@ class CRMDemoViewController: UIViewController {
         print("cancel");
     }
     
-    var cityPickerCtrl = CityPickerViewController();
+    var datePickerCtrl = DatePickerViewController();
     @IBAction func btnDatePickerClick(sender: AnyObject) {
         
-        cityPickerCtrl.show(self);
+        datePickerCtrl.show(self);
+    }
+    @IBAction func txtDateClick(sender: AnyObject) {
+        datePickerCtrl.show(self, doneAction: self.txtDateDone,cancelAction: self.txtDateCancel);
+    }
+    
+    func txtDateDone(sender:DatePickerViewController,date:NSDate){
+        
+        let format = NSDateFormatter();
+//        format.dateFromString("yyyy-MM-dd");
+        format.dateFormat = "yyyy-MM-dd";
+        self.txtDate.text = format.stringFromDate(date);
+    }
+    func txtDateCancel(sender:DatePickerViewController){
+        print("cancel");
     }
     /*
     // MARK: - Navigation

@@ -8,17 +8,20 @@
 
 import UIKit
 
-class CityPickerViewController: UIViewController { 
+class DatePickerViewController: UIViewController {
     
     @IBOutlet weak var containerTopC: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
-
     var viewTopC:NSLayoutConstraint?;
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    var cancelFn:((sender:DatePickerViewController) -> Void)?;
+    var doneFn:((sender:DatePickerViewController,date:NSDate) -> Void)?
     
     init(){
         
-        let resourcesBundle = NSBundle(forClass:CityPickerViewController.self)
-        super.init(nibName: "CityPickerViewController", bundle: resourcesBundle) 
+        let resourcesBundle = NSBundle(forClass:DatePickerViewController.self)
+        super.init(nibName: "DatePickerViewController", bundle: resourcesBundle)
         
     }
     
@@ -57,6 +60,15 @@ class CityPickerViewController: UIViewController {
             }, completion: nil);
         
     }
+    func show(parent:UIViewController,doneAction:((sender:DatePickerViewController,date:NSDate) -> Void),cancelAction:((sender:DatePickerViewController) -> Void)?){
+        
+        self.cancelFn = cancelAction;
+        self.doneFn = doneAction;
+        
+        self.show(parent);
+        
+    }
+    
     func hide(){
         
         UIView.animateWithDuration(0.3, delay: 0.25, options: .CurveEaseInOut, animations: { () -> Void in
@@ -70,10 +82,19 @@ class CityPickerViewController: UIViewController {
         
     }
     @IBAction func btnCancelClick(sender: AnyObject) {
-        self.hide();
+        if let cancel = self.cancelFn{
+             self.hide();
+            cancel(sender: self);
+        }
+
     }
     @IBAction func btnDoneClick(sender: AnyObject) {
-        self.hide();
+        if let done = self.doneFn{
+            
+            self.hide();
+            
+            done(sender: self,date: self.datePicker.date);
+        }
     }
     
     override func viewDidLoad() {
