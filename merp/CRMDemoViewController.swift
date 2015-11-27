@@ -39,6 +39,12 @@ class CRMDemoViewController: UIViewController {
     func txtCityCancel(sender:BaseActionSheetPickerView){
         print("cancel");
     }
+    
+    var cityPickerCtrl = CityPickerViewController();
+    @IBAction func btnDatePickerClick(sender: AnyObject) {
+        
+        cityPickerCtrl.show(self);
+    }
     /*
     // MARK: - Navigation
 
