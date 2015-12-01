@@ -116,25 +116,10 @@ class CityPicker:BaseActionSheetPickerView {
                     }) { (err) -> Void in
                         
                 }
-                
-//                RequestApi.get("http://172.16.0.194:3000/crm/cities/\(p.id!)", nil, success: { (json) -> Void in
-//                    
-//                    print(json);
-//                    
-//                    self.cities = Mapper<City>().mapArray(json);
-//                    self.basePickerView.reloadComponent(1);
-//                    
-//                    MBProgressHUD.hideHUDForView(self.pickerView, animated: true);
-//                    
-//                    }) { (err) -> Void in
-//                        
-//                };
             }
             else{
                 print(self.provinces);
             }
-            
-            // reload something
         }
     }
     

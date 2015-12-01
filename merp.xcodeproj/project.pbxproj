@@ -18,6 +18,9 @@
 		231D882D1BFDB309003B4347 /* usermodels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 231D882C1BFDB309003B4347 /* usermodels.plist */; settings = {ASSET_TAGS = (); }; };
 		231D88311BFDC6AF003B4347 /* UserModelGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D88301BFDC6AF003B4347 /* UserModelGroup.swift */; settings = {ASSET_TAGS = (); }; };
 		231D88331BFDC8F0003B4347 /* ErpListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D88321BFDC8F0003B4347 /* ErpListViewHeader.swift */; settings = {ASSET_TAGS = (); }; };
+		234C90651C0D9926005A1E59 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234C90631C0D9926005A1E59 /* DataPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		234C90661C0D9927005A1E59 /* DataPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 234C90641C0D9926005A1E59 /* DataPickerViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		234C90681C0DA9F0005A1E59 /* CityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234C90671C0DA9F0005A1E59 /* CityPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		23B8B8D61BFEB82D00811AEA /* ErpListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B8B8D51BFEB82D00811AEA /* ErpListViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		23FE9FF11BFC1FD20031EC23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE9FF01BFC1FD20031EC23 /* AppDelegate.swift */; };
 		23FE9FF31BFC1FD20031EC23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE9FF21BFC1FD20031EC23 /* ViewController.swift */; };
@@ -64,6 +67,9 @@
 		231D882C1BFDB309003B4347 /* usermodels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = usermodels.plist; sourceTree = "<group>"; };
 		231D88301BFDC6AF003B4347 /* UserModelGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelGroup.swift; sourceTree = "<group>"; };
 		231D88321BFDC8F0003B4347 /* ErpListViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErpListViewHeader.swift; sourceTree = "<group>"; };
+		234C90631C0D9926005A1E59 /* DataPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
+		234C90641C0D9926005A1E59 /* DataPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPickerViewController.xib; sourceTree = "<group>"; };
+		234C90671C0DA9F0005A1E59 /* CityPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityPickerViewController.swift; sourceTree = "<group>"; };
 		23B8B8D51BFEB82D00811AEA /* ErpListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErpListViewCell.swift; sourceTree = "<group>"; };
 		23FE9FED1BFC1FD20031EC23 /* merp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = merp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23FE9FF01BFC1FD20031EC23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +267,9 @@
 				23B8B8D51BFEB82D00811AEA /* ErpListViewCell.swift */,
 				23084F1D1C08326400E5421D /* DatePickerViewController.swift */,
 				23084F1E1C08326400E5421D /* DatePickerViewController.xib */,
+				234C90631C0D9926005A1E59 /* DataPickerViewController.swift */,
+				234C90641C0D9926005A1E59 /* DataPickerViewController.xib */,
+				234C90671C0DA9F0005A1E59 /* CityPickerViewController.swift */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -374,6 +383,7 @@
 				23084F201C08326400E5421D /* DatePickerViewController.xib in Resources */,
 				23FE9FFB1BFC1FD20031EC23 /* Assets.xcassets in Resources */,
 				23FEA0341BFC656D0031EC23 /* BMMS.storyboard in Resources */,
+				234C90661C0D9927005A1E59 /* DataPickerViewController.xib in Resources */,
 				23FEA0321BFC65610031EC23 /* CRM.storyboard in Resources */,
 				23FE9FF61BFC1FD20031EC23 /* Main.storyboard in Resources */,
 			);
@@ -459,6 +469,8 @@
 				23193A121C070A0A0040C20A /* Province.swift in Sources */,
 				23FEA01C1BFC21C90031EC23 /* nsObj.m in Sources */,
 				23FEA0451BFC760A0031EC23 /* CommonViewCell.swift in Sources */,
+				234C90651C0D9926005A1E59 /* DataPickerViewController.swift in Sources */,
+				234C90681C0DA9F0005A1E59 /* CityPickerViewController.swift in Sources */,
 				23FEA0301BFC64420031EC23 /* EntryErpListViewController.swift in Sources */,
 				23193A0D1C0709B10040C20A /* CRMDemoViewController.swift in Sources */,
 				23FE9FF91BFC1FD20031EC23 /* merp.xcdatamodeld in Sources */,

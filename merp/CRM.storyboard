@@ -67,6 +67,15 @@
                                 <rect key="frame" x="13" y="181" width="100" height="100"/>
                                 <animations/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="33o-Px-9UF">
+                                <rect key="frame" x="13" y="301" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtCityPickerTouchDown:" destination="cjJ-7H-f1H" eventType="touchDown" id="mxT-Ug-O4C"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,6 +92,7 @@
                     </view>
                     <connections>
                         <outlet property="txtCity" destination="F5J-hV-SNi" id="wPg-Wu-wuF"/>
+                        <outlet property="txtCityPicker" destination="33o-Px-9UF" id="COr-ci-9rz"/>
                         <outlet property="txtDate" destination="0Py-EJ-OtD" id="6bc-Ep-EYr"/>
                         <outlet property="uploadImage" destination="Ib7-XR-nuR" id="jlQ-1o-xps"/>
                     </connections>

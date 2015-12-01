@@ -15,12 +15,20 @@ class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UII
     
     @IBOutlet weak var txtDate: UITextField!
     
+    @IBOutlet weak var txtCityPicker: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         txtCity.inputView = UIView(frame: CGRectZero);
         txtDate.inputView = UIView(frame: CGRectZero);
+        txtCityPicker.inputView  = UIView(frame: CGRectZero);
 
         // Do any additional setup after loading the view.
+    }
+    
+    var cityPickerView:CityPickerViewController?;
+    @IBAction func txtCityPickerTouchDown(sender: AnyObject) {
+        cityPickerView = CityPickerViewController();
+        cityPickerView?.show(self);
     }
 
     override func didReceiveMemoryWarning() {
