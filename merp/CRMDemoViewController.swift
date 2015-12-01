@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-class CRMDemoViewController: UIViewController {
+class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     @IBOutlet weak var txtCity: UITextField!
     
@@ -60,6 +61,37 @@ class CRMDemoViewController: UIViewController {
     }
     func txtDateCancel(sender:DatePickerViewController){
         print("cancel");
+    }
+    
+    
+    @IBOutlet weak var uploadImage: UIImageView!
+    @IBAction func btnTakePhotoClick(sender: AnyObject) {
+        let imgPicker = UIImagePickerController();
+        imgPicker.delegate = self;
+        
+        presentViewController(imgPicker, animated: true, completion: nil);
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        self.uploadImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage;
+        picker.dismissViewControllerAnimated(true, completion: nil);
+    }
+    
+    @IBAction func btnUploadClick(sender: AnyObject) {
+        
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true);
+        
+        let fields = ["customername":"coco"];
+        
+        RequestApi.upload("http://172.16.0.194:3000/crm/profile", files: ["image":self.uploadImage.image!], fields: fields, success: { (ret) -> Void in
+            print(ret.success);
+            
+            MBProgressHUD.hideHUDForView(self.view, animated: true);
+            }) { (err) -> Void in
+                print(err);
+                MBProgressHUD.hideHUDForView(self.view, animated: true);
+        }
     }
     /*
     // MARK: - Navigation

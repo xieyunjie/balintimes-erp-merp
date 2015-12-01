@@ -37,6 +37,23 @@
                                     <action selector="btnDatePickerClick:" destination="cjJ-7H-f1H" eventType="touchUpInside" id="znH-gj-qDd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8Y-oc-fAa">
+                                <rect key="frame" x="20" y="143" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Photo"/>
+                                <connections>
+                                    <action selector="btnTakePhotoClick:" destination="cjJ-7H-f1H" eventType="touchUpInside" id="RFu-TX-J77"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maC-kN-drd">
+                                <rect key="frame" x="99" y="143" width="69" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="btnUploadClick:" destination="cjJ-7H-f1H" eventType="touchUpInside" id="elp-ZL-tbt"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0Py-EJ-OtD">
                                 <rect key="frame" x="20" y="96" width="560" height="30"/>
                                 <animations/>
@@ -46,6 +63,10 @@
                                     <action selector="txtDateClick:" destination="cjJ-7H-f1H" eventType="touchDown" id="jSM-dL-UuB"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ib7-XR-nuR">
+                                <rect key="frame" x="13" y="181" width="100" height="100"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,6 +84,7 @@
                     <connections>
                         <outlet property="txtCity" destination="F5J-hV-SNi" id="wPg-Wu-wuF"/>
                         <outlet property="txtDate" destination="0Py-EJ-OtD" id="6bc-Ep-EYr"/>
+                        <outlet property="uploadImage" destination="Ib7-XR-nuR" id="jlQ-1o-xps"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sa2-cJ-ezq" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -27,64 +27,138 @@ class ResponseData<T:Mappable>{
         self.msg = msg;
         self.total = total;
         self.pageSize = pageSize;
+        
+        
     }
     
     lazy var model:T? = {
+        if self.data.isEmpty == true {
+            return nil;
+        }
         return  Mapper<T>().map(self.data);
         }();
     lazy var list:Array<T>? = {
+        if self.data.isEmpty == true {
+            return nil;
+        }
         return Mapper<T>().mapArray(self.data);
         }();
 }
 
+class UploadResponse:Mappable{
+    
+    required init?(_ map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        
+    }
+}
+
 struct RequestApi{
     
-    static func post(UrlString:String,_ parameters:[String:AnyObject]?, success:(String)->Void,failure:(NSError?)->Void){
+    // post ==========
+    static func post(UrlString:String,_ parameters:[String:AnyObject]?, success:(String)->Void,failure:((NSError?)->Void)?){
         
         request(.POST, UrlString, parameters, success: { (data) -> Void in
             success(data);
             }) { (err) -> Void in
-                failure(err);
+                if let f = failure{
+                    f(err);
+                }
         }
         
     }
+    static func post<T:Mappable>(UrlString:String,_ parameters:[String:AnyObject]?,success:(ResponseData<T>)->Void,failure:((NSError?)->Void)?){
+        
+        requestData(.POST, UrlString, parameters, success: { (data) -> Void in
+            
+            let resJson = JSON(data:data);
+            
+            let retData = ResponseData<T>(data: resJson["data"].description, success: resJson["success"].boolValue,
+                                            msg: resJson["message"].stringValue, total: resJson["total"].intValue,
+                                            pageSize: resJson["pageSize"].intValue)
+            
+            success(retData);
+            
+            }) { (err) -> Void in
+                print(err?.code);
+                if let f = failure{
+                    f(err);
+                }
+        }
+    }
+    // post =============
     
-    static func get(UrlString:String,_ parameters:[String:AnyObject]?, success:(String)->Void,failure:(NSError?)->Void){
+    
+    // get =============
+    static func get(UrlString:String,_ parameters:[String:AnyObject]?, success:(String)->Void,failure:((NSError?)->Void)?){
         
         request(.GET, UrlString, parameters, success: { (data) -> Void in
             success(data);
             }) { (err) -> Void in
                 print(err?.code);
                 
-                failure(err);
+                if let f = failure{
+                    f(err);
+                }
         }
     }
     
-    static func get<T:Mappable>(UrlString:String,_ parameters:[String:AnyObject]?,success:(ResponseData<T>)->Void,failure:(NSError?)->Void){
+    static func get<T:Mappable>(UrlString:String,_ parameters:[String:AnyObject]?,success:(ResponseData<T>)->Void,failure:((NSError?)->Void)?){
         
         requestData(.GET, UrlString, parameters, success: { (data) -> Void in
             
             let resJson = JSON(data:data);
             
-            let retData = ResponseData<T>(data: resJson["data"].description, success: resJson["success"].boolValue, msg: resJson["message"].stringValue, total: resJson["total"].intValue, pageSize: resJson["pageSize"].intValue)
+            let retData = ResponseData<T>(data: resJson["data"].description, success: resJson["success"].boolValue,
+                                            msg: resJson["message"].stringValue, total: resJson["total"].intValue,
+                                            pageSize: resJson["pageSize"].intValue)
             
             success(retData);
             
             }) { (err) -> Void in
                 print(err?.code);
-                failure(err);
+                if let f = failure{
+                    f(err);
+                }
         }
     }
+    // get =============
     
-    static func put(UrlString:String,_ parameters:[String:AnyObject]?, success:(String)->Void,failure:(NSError?)->Void){
+    
+    // put =============
+    static func put(UrlString:String,_ parameters:[String:AnyObject]?, success:(String)->Void,failure:((NSError?)->Void)?){
         
         request(.PUT, UrlString, parameters, success: { (data) -> Void in
             success(data);
             }) { (err) -> Void in
-                failure(err);
+                if let f = failure{
+                    f(err);
+                }
         }
         
     }
+    static func put<T:Mappable>(UrlString:String,_ parameters:[String:AnyObject]?,success:(ResponseData<T>)->Void,failure:((NSError?)->Void)?){
+        
+        requestData(.PUT, UrlString, parameters, success: { (data) -> Void in
+            
+            let resJson = JSON(data:data);
+            
+            let retData = ResponseData<T>(data: resJson["data"].description, success: resJson["success"].boolValue,
+                msg: resJson["message"].stringValue, total: resJson["total"].intValue,
+                pageSize: resJson["pageSize"].intValue)
+            
+            success(retData);
+            
+            }) { (err) -> Void in
+                print(err?.code);
+                if let f = failure{
+                    f(err);
+                }
+        }
+    }
+    // put ==============
     
     
     private static func request(method:Alamofire.Method,_ UrlString:URLStringConvertible,_ parameters:[String:AnyObject]?, success:(String)->Void,failure:(NSError?)->Void){
@@ -122,4 +196,94 @@ struct RequestApi{
             
         }
     }
+    
+    
+    // upload
+    static func upload(UrlString:URLStringConvertible, files:[String:UIImage],fields:[String:String]?,success:(ResponseData<UploadResponse>) -> Void,failure:((NSError?) -> Void)?){
+        var filesDic = Dictionary<String,NSURL>();
+        var fieldsDic = Dictionary<String,NSData>();
+        
+        var picData:NSData, fileFullPath:String?;
+        for (key,image) in files{
+            picData =  UIImageJPEGRepresentation(image, 0.8)!;
+            fileFullPath = NSTemporaryDirectory().stringByAppendingString("\(key).png");
+            picData.writeToFile(fileFullPath!, atomically: false);
+            
+            filesDic[key] = NSURL(fileURLWithPath: fileFullPath!);
+        }
+        
+        if let fs = fields{
+            for (key,value) in fs{
+                
+                fieldsDic[key] = value.dataUsingEncoding(NSUTF8StringEncoding);
+            
+            }
+        }
+        
+        
+        let  multipart = MultipartFormData();
+        for (key,url) in filesDic{
+            multipart.appendBodyPart(fileURL: url, name: key);
+        }
+        
+        for (key,data) in fieldsDic{
+            multipart.appendBodyPart(data: data, name: key);
+        }
+        
+        
+        Alamofire.upload(.POST, UrlString, headers: nil, multipartFormData: { (multipart) -> Void in
+            
+            for (key,url) in filesDic{
+                multipart.appendBodyPart(fileURL: url, name: key);
+            }
+            
+            for (key,data) in fieldsDic{
+                multipart.appendBodyPart(data: data, name: key);
+            }
+            
+            }, encodingMemoryThreshold:1024) { (encodingResult) -> Void in
+                
+                do{
+                    for url in filesDic.values{
+                        try NSFileManager.defaultManager().removeItemAtPath(url.path!);
+                    }
+                }
+                catch {
+                    
+                }
+                
+                switch encodingResult{
+                    case .Success(let upload,_,_):
+                        upload.responseJSON(completionHandler: { (res) -> Void in
+                            
+                            if res.result.isFailure == true{
+                                print(res.result.error?.code);
+                                if let f = failure{
+                                    f(res.result.error);
+                                }
+                                return;
+                            }
+                            
+                            let resJson = JSON(data:res.data!);
+                            
+                            let retData = ResponseData<UploadResponse>(data: "", success: resJson["success"].boolValue,
+                                msg: resJson["message"].stringValue, total: 0, pageSize: 0)
+                            
+                            success(retData);
+                            
+                            
+                        });
+                case .Failure(let err):
+                    if let f = failure{
+                        f(err as NSError);
+                    }
+                    
+                }
+        }
+
+        
+    
+        
+    }
+    
 }
