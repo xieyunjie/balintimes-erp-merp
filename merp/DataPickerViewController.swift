@@ -38,7 +38,7 @@ class DataPickerViewController: UIViewController{
     
     
     
-    func show(parent:UIViewController){
+    final func show(parent:UIViewController){
         
         if self.view.superview == nil{
             self.view.translatesAutoresizingMaskIntoConstraints = false;
@@ -74,7 +74,7 @@ class DataPickerViewController: UIViewController{
         
     }
     
-    func hide(){
+    final func hide(){
         
         UIView.animateWithDuration(0.3, delay: 0.25, options: .CurveEaseInOut, animations: { () -> Void in
             
@@ -87,7 +87,7 @@ class DataPickerViewController: UIViewController{
         
     }
     
-    @IBAction func btnCancelClick(sender: AnyObject) {
+    @IBAction final func btnCancelClick(sender: AnyObject) {
         if let cancel = self.delegate?.pickerCancel{
             cancel();
         }
@@ -95,7 +95,7 @@ class DataPickerViewController: UIViewController{
         self.hide();
     }
     
-    @IBAction func btnDoneClick(sender: AnyObject) { 
+    @IBAction final func btnDoneClick(sender: AnyObject) {
         if let d = self.delegate{
             d.pickerDone();
         }
