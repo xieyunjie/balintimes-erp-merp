@@ -28,7 +28,15 @@ class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UII
     var cityPickerView:CityPickerViewController?;
     @IBAction func txtCityPickerTouchDown(sender: AnyObject) {
         cityPickerView = CityPickerViewController();
-        cityPickerView?.show(self);
+        cityPickerView?.show(self,successAction:self.txtCityPickerDone,cancelAction:self.txtCityPickerCancel);
+    }
+    
+    func txtCityPickerDone(picker:DataPickerViewController,province:Province,city:City){
+        
+        self.txtCityPicker.text = "\(province.name!) -> \(city.name!)";
+    }
+    func txtCityPickerCancel(picker:DataPickerViewController){
+        print("cancel");
     }
 
     override func didReceiveMemoryWarning() {

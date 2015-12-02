@@ -9,6 +9,7 @@
                 <outlet property="containerTopC" destination="6jj-hs-T9M" id="pTo-tR-HT1"/>
                 <outlet property="containerView" destination="SDo-SU-NuW" id="Kgt-3r-aDk"/>
                 <outlet property="dataPicker" destination="RKP-ZG-vzX" id="1Nv-IA-as6"/>
+                <outlet property="navItem" destination="10F-od-WCb" id="6Xe-lw-XJY"/>
                 <outlet property="view" destination="P9X-48-5O2" id="9x6-wV-7bK"/>
             </connections>
         </placeholder>
@@ -20,6 +21,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDo-SU-NuW" userLabel="container">
                     <rect key="frame" x="0.0" y="250" width="500" height="250"/>
                     <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKP-ZG-vzX">
+                            <rect key="frame" x="0.0" y="40" width="500" height="210"/>
+                            <animations/>
+                        </pickerView>
                         <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVK-HD-mOS">
                             <rect key="frame" x="0.0" y="0.0" width="500" height="40"/>
                             <animations/>
@@ -27,7 +32,7 @@
                                 <constraint firstAttribute="height" constant="40" id="dDc-xC-83B"/>
                             </constraints>
                             <items>
-                                <navigationItem title="Title" id="10F-od-WCb">
+                                <navigationItem id="10F-od-WCb">
                                     <barButtonItem key="leftBarButtonItem" title="取消" id="t0d-Tn-l8n">
                                         <connections>
                                             <action selector="btnCancelClick:" destination="-1" id="YKY-dB-DJb"/>
@@ -41,10 +46,6 @@
                                 </navigationItem>
                             </items>
                         </navigationBar>
-                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKP-ZG-vzX">
-                            <rect key="frame" x="0.0" y="40" width="500" height="210"/>
-                            <animations/>
-                        </pickerView>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

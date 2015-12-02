@@ -8,13 +8,25 @@
 
 import UIKit
 
-class DataPickerViewController: UIViewController{
+@objc
+protocol DataPickerViewControllerDelegate{
+    
+    func pickerDone();
+    
+    optional func pickerCancel();
+    optional func pickerShowCompletion(finish:Bool);
+}
 
+class DataPickerViewController: UIViewController{
+    
     @IBOutlet weak var containerTopC: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!;
     var viewTopC:NSLayoutConstraint?;
     @IBOutlet weak var dataPicker: UIPickerView!
     
+    var delegate:DataPickerViewControllerDelegate?;
+    
+    @IBOutlet weak var navItem: UINavigationItem!
     
     init(){
         let resourcesBundle = NSBundle(forClass:DataPickerViewController.self)
@@ -26,7 +38,7 @@ class DataPickerViewController: UIViewController{
     
     
     
-    func show(parent:UIViewController,showCompletion:((Bool) -> Void)?){
+    func show(parent:UIViewController){
         
         if self.view.superview == nil{
             self.view.translatesAutoresizingMaskIntoConstraints = false;
@@ -53,7 +65,13 @@ class DataPickerViewController: UIViewController{
             self.containerTopC.constant = self.view.superview!.frame.height - self.containerView.frame.height;
             self.view.layoutIfNeeded()
             
-            }, completion: showCompletion);
+            }) {(finish) -> Void in
+                if let d = self.delegate?.pickerShowCompletion{
+                    d(finish);
+                }
+        }
+        
+        
     }
     
     func hide(){
@@ -70,38 +88,39 @@ class DataPickerViewController: UIViewController{
     }
     
     @IBAction func btnCancelClick(sender: AnyObject) {
-        self.cancelInput();
-    }
-    func cancelInput(){
+        if let cancel = self.delegate?.pickerCancel{
+            cancel();
+        }
         
+        self.hide();
     }
     
-    @IBAction func btnDoneClick(sender: AnyObject) {
-        self.doneInput();
-    }
-    func doneInput(){
-        
+    @IBAction func btnDoneClick(sender: AnyObject) { 
+        if let d = self.delegate{
+            d.pickerDone();
+        }
+        self.hide();
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
