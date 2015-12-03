@@ -29,14 +29,14 @@ class CityPickerViewController: DataPickerViewController,UIPickerViewDelegate,UI
         // Dispose of any resources that can be recreated.
     }
     
-    func show(parent: UIViewController,successAction:((DataPickerViewController,Province,City) -> Void)!,cancelAction:((DataPickerViewController) -> Void)?) {
+    func show(parent: UIViewController,_ sender:AnyObject, successAction:((DataPickerViewController,Province,City) -> Void)!,cancelAction:((DataPickerViewController) -> Void)?) {
         
         self.done = successAction;
         self.cancel = cancelAction;
         
         self.delegate = self;
         
-        super.show(parent);
+        super.show(parent,sender:sender);
         
         self.navItem.title = "城市选择";
         
@@ -44,6 +44,10 @@ class CityPickerViewController: DataPickerViewController,UIPickerViewDelegate,UI
     func pickerShowCompletion(finish:Bool){
         
         guard finish == true else{
+            return;
+        }
+        
+        guard self.provinces == nil else{
             return;
         }
         

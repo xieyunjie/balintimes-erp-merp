@@ -17,19 +17,33 @@ protocol DataPickerViewControllerDelegate{
     optional func pickerShowCompletion(finish:Bool);
 }
 
+enum DataPickerViewControllerNotification:String {
+    
+    case PickerShowBeginNotification = "PickerShowBeginNotification",PickerShowEndNotification = "PickerShowEndNotification",
+    PickerHideBeginNotification = "PickerHideBeginNotification",PickerHideEndNotification = "PickerHideEndNotification";
+    
+    case PickerHeightKey = "PickerHeightKey",PickerAnimateDuration = "PickerAnimateDuration",PickerDelay = "PickerDelay";
+}
+
 class DataPickerViewController: UIViewController{
     
     @IBOutlet weak var containerTopC: NSLayoutConstraint!
-    @IBOutlet weak var containerView: UIView!;
     var viewTopC:NSLayoutConstraint?;
+    
+    @IBOutlet weak var containerView: UIView!;
     @IBOutlet weak var dataPicker: UIPickerView!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     var delegate:DataPickerViewControllerDelegate?;
+    private var notificationCenter:NSNotificationCenter;
     
-    @IBOutlet weak var navItem: UINavigationItem!
+    private let animateDuration = 0.25,animateDelay = 0.25;
+    
+    var sender:AnyObject?;
     
     init(){
         let resourcesBundle = NSBundle(forClass:DataPickerViewController.self)
+        self.notificationCenter = NSNotificationCenter.defaultCenter();
         super.init(nibName: "DataPickerViewController", bundle: resourcesBundle)
     }
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +52,7 @@ class DataPickerViewController: UIViewController{
     
     
     
-    final func show(parent:UIViewController){
+    final func show(parent:UIViewController,sender:AnyObject){
         
         if self.view.superview == nil{
             self.view.translatesAutoresizingMaskIntoConstraints = false;
@@ -60,27 +74,48 @@ class DataPickerViewController: UIViewController{
             self.view.superview?.layoutIfNeeded();
         }
         
-        UIView.animateWithDuration(0.25, delay: 0.25, options: .CurveEaseInOut, animations: { () -> Void in
+        self.sender =  sender;
+        
+        var userInfo:[NSObject:AnyObject] = [DataPickerViewControllerNotification.PickerAnimateDuration.rawValue:self.animateDuration,
+            DataPickerViewControllerNotification.PickerDelay.rawValue:self.animateDelay,
+            DataPickerViewControllerNotification.PickerHeightKey.rawValue:CGFloat(0) ];
+        
+        
+        self.notificationCenter.postNotificationName(DataPickerViewControllerNotification.PickerShowBeginNotification.rawValue, object: self, userInfo: userInfo);
+        
+        UIView.animateWithDuration(self.animateDuration, delay: self.animateDelay, options: .CurveEaseInOut, animations: { () -> Void in
             
             self.containerTopC.constant = self.view.superview!.frame.height - self.containerView.frame.height;
             self.view.layoutIfNeeded()
             
             }) {(finish) -> Void in
+                
+                userInfo[DataPickerViewControllerNotification.PickerHeightKey.rawValue] = CGFloat(self.containerView.frame.height);
+                
+                 self.notificationCenter.postNotificationName(DataPickerViewControllerNotification.PickerShowEndNotification.rawValue, object: self, userInfo: userInfo);
+                
+                
                 if let d = self.delegate?.pickerShowCompletion{
                     d(finish);
                 }
         }
         
-        
     }
     
-    final func hide(){
+   final func hide(){
         
-        UIView.animateWithDuration(0.3, delay: 0.25, options: .CurveEaseInOut, animations: { () -> Void in
+        var userInfo:[NSObject:AnyObject] = [DataPickerViewControllerNotification.PickerAnimateDuration.rawValue:self.animateDuration,
+            DataPickerViewControllerNotification.PickerDelay.rawValue:self.animateDelay,
+            DataPickerViewControllerNotification.PickerHeightKey.rawValue:CGFloat(self.containerView.frame.height) ];
+        
+        self.notificationCenter.postNotificationName(DataPickerViewControllerNotification.PickerHideBeginNotification.rawValue, object: self, userInfo: userInfo);
+        UIView.animateWithDuration(self.animateDuration, delay: self.animateDelay, options: .CurveEaseInOut, animations: { () -> Void in
             
             self.containerTopC.constant = self.view.superview!.frame.height;
             self.containerView.layoutIfNeeded();
             }) { (bool) -> Void in
+                 userInfo[DataPickerViewControllerNotification.PickerHeightKey.rawValue] = CGFloat(0);
+                self.notificationCenter.postNotificationName(DataPickerViewControllerNotification.PickerHideEndNotification.rawValue, object: self, userInfo: userInfo);
                 
                 self.viewTopC?.constant = self.view.superview!.frame.height;
         }

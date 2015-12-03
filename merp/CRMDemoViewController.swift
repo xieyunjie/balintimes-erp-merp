@@ -9,13 +9,13 @@
 import UIKit
 import MBProgressHUD
 
-class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate {
 
     @IBOutlet weak var txtCity: UITextField!
-    
     @IBOutlet weak var txtDate: UITextField!
-    
     @IBOutlet weak var txtCityPicker: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         txtCity.inputView = UIView(frame: CGRectZero);
@@ -25,10 +25,42 @@ class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UII
         // Do any additional setup after loading the view.
     }
     
-    var cityPickerView:CityPickerViewController?;
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        if textField == self.txtCityPicker{
+            return false;
+        }
+        return true;
+    }
+    
+    private var _cityPickerView:CityPickerViewController?;
+    private var cityPickerView:CityPickerViewController{
+        get {
+            if self._cityPickerView == nil{
+                self._cityPickerView = CityPickerViewController();
+                let notificationListener = NSNotificationCenter.defaultCenter();
+                notificationListener.addObserver(self, selector: Selector("listenerCityPickerViewShowEnd:"), name: DataPickerViewControllerNotification.PickerShowEndNotification.rawValue, object: self.cityPickerView);
+                notificationListener.addObserver(self, selector: Selector("listenerCityPickerViewHideEnd:"), name: DataPickerViewControllerNotification.PickerHideEndNotification.rawValue, object: self.cityPickerView);
+            }
+            
+            return self._cityPickerView!;
+        }
+    }
     @IBAction func txtCityPickerTouchDown(sender: AnyObject) {
-        cityPickerView = CityPickerViewController();
-        cityPickerView?.show(self,successAction:self.txtCityPickerDone,cancelAction:self.txtCityPickerCancel);
+
+        cityPickerView.show(self, sender, successAction:self.txtCityPickerDone,cancelAction:self.txtCityPickerCancel);
+    }
+    
+    func listenerCityPickerViewShowEnd(notification: NSNotification){
+        
+        print(notification);
+    }
+    func listenerCityPickerViewHideEnd(notification: NSNotification){
+        
+        print(notification);
     }
     
     func txtCityPickerDone(picker:DataPickerViewController,province:Province,city:City){
@@ -38,7 +70,7 @@ class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UII
     func txtCityPickerCancel(picker:DataPickerViewController){
         print("cancel");
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
